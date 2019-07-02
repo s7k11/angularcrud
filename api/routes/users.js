@@ -51,21 +51,34 @@ router.post('/update/:id',(req,res,next)=>{
     const id = req.params.id;
     let UserUpdate = {
         _id :id,
-        heading : req.body.heading
+        name : req.body.name,
+        email : req.body.email,
+        password : req.body.password,
+        city : req.body.city,
+        address : req.body.address
     };
     User.findOneAndUpdate({_id:id}, UserUpdate,(err,data)=>{
         if(err){
             console.log(err)
         }
         else{
-            console.log(data)
+            // console.log(data)
+            res.json(data)
         }
         
     })
 })
 
+/////////////////edit 
+router.get('/edit/:id',(req,res)=>{
+    let id = req.params.id;
+    User.findById(id, function (err,data){
+        res.json(data);
+})
+})
+
 //////////////////////////////////////////////////delete data///////////////////////////////////////////////
-router.post('/delete/:id',(req,res)=>{
+router.get('/delete/:id',(req,res)=>{
     let id=req.params.id
     User.findOneAndRemove(id,(err,data)=>{
         if(err){

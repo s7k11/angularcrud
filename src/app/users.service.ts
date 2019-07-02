@@ -31,9 +31,27 @@ export class UsersService {
           .subscribe(res => console.log(res));
   }
   delData(id) {
-      return this
-          .http
-          .get(`${this.url}/delete/${id}`).subscribe();
+      return this.http.get(`${this.url}/delete/${id}`).subscribe();
   }
+  editData(id) {
+    return this
+            .http
+            .get(`${this.url}/edit/${id}`);
+    }
 
+
+    up_data(name,city, password,address,email, id) {
+
+      const obj = {
+          name: name,
+          city: city,
+          password: password,
+          address:address,
+          email:email
+        };
+      this
+        .http
+        .post(`${this.url}/update/${id}`, obj)
+        .subscribe(res => console.log('Done'));
+    }
 }

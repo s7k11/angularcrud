@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import {MiddleAddComponent} from './middle-add/middle-add.component'
 import {MiddleGetComponent} from './middle-get/middle-get.component'
 import {MiddleComponent} from './middle/middle.component'
+import {UpdateComponent} from './update/update.component'
 const routes: Routes = [
   {
     path:'' ,component:MiddleComponent
@@ -12,6 +13,9 @@ const routes: Routes = [
   },
   {
     path:'middle-get' ,component:MiddleGetComponent
+  },
+  {
+    path:'update/:id' ,component:UpdateComponent
   },
 ];
 
