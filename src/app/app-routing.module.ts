@@ -4,6 +4,8 @@ import {MiddleAddComponent} from './middle-add/middle-add.component'
 import {MiddleGetComponent} from './middle-get/middle-get.component'
 import {MiddleComponent} from './middle/middle.component'
 import {UpdateComponent} from './update/update.component'
+import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 const routes: Routes = [
   {
     path:'' ,component:MiddleComponent
@@ -17,6 +19,12 @@ const routes: Routes = [
   {
     path:'update/:id' ,component:UpdateComponent
   },
+  {
+    path:'login', component:LoginComponent
+  },
+  {
+    path:'dashboard/:id', component:DashboardComponent
+  }
 ];
 
 @NgModule({

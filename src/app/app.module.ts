@@ -11,6 +11,8 @@ import { MiddleGetComponent } from './middle-get/middle-get.component';
 import{FormsModule} from '@angular/forms'
 import { HttpClientModule } from '@angular/common/http';
 import { UpdateComponent } from './update/update.component';
+import { LoginComponent } from './login/login.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +21,9 @@ import { UpdateComponent } from './update/update.component';
     FooterComponent,
     MiddleAddComponent,
     MiddleGetComponent,
-    UpdateComponent
+    UpdateComponent,
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

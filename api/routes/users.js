@@ -90,4 +90,51 @@ router.get('/delete/:id',(req,res)=>{
         }
     })
 })
+
+
+/////////////////////////////////////////////////////signin//////////////////////////////////////////////////////
+router.post('/signin',(req,res)=>{
+    const email = req.body.email;
+    const password = req.body.password;
+    User.findOne({
+        email:email
+    },(err,user)=>{
+        if(err){
+            res.json(err);
+        }
+        else{
+            if(user == null ){
+              res.json({message:"Check your Credentials"});
+            }
+            else if (user.password != password){
+                res.json({message:"Check your password"});
+            }
+            else{
+                res.json(user);
+            }
+        }
+    })
+})
+/////////////////////getdatabyid/////////////////////////////////////
+router.get('/getbyid/:id',(req,res)=>{
+    let id = req.params.id;
+    User.findOne({
+        _id:id
+    },(err,user)=>
+    {
+        if(err){
+            console.log(err);
+        }
+        else{
+            if(user==null)
+            {
+                res.json({message:"Does not exist"});
+            }
+            else{
+                res.json(user);
+            }
+        }
+    })
+})
+
 module.exports = router;

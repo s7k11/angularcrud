@@ -6,9 +6,9 @@ import { UsersService } from '../users.service';
   styleUrls: ['./middle-add.component.css']
 })
 export class MiddleAddComponent implements OnInit {
-  name;
+  name:String;
   email;
-  password;
+  password:String;
   address;
   city;
   constructor(private us: UsersService) { }
@@ -16,7 +16,16 @@ export class MiddleAddComponent implements OnInit {
   ngOnInit() {
   }
   addData() {
-    this.us.addData(this.name,this.address,this.city,this.email,this.password);
+    if(this.password.length<10){
+      alert('Password Must be atleast 10 Characters long');
+    }
+    else
+    {
+      this.us.addData(this.name,this.address,this.city,this.password,this.email);
+      alert('Registeration Complete');
+    }
+    console.log(this.password.length)
+    // alert(this.password.lenght);
     // console.log(this.name)
 }
 
