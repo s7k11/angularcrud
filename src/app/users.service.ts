@@ -6,6 +6,7 @@ import { Router } from '@angular/router'
   providedIn: 'root'
 })
 export class UsersService {
+  res:any;
 
   url = 'http://localhost:3000/user';
   constructor(private http: HttpClient , private router : Router) { }
@@ -64,7 +65,7 @@ export class UsersService {
       this
         .http
         .post(`${this.url}/signin`,obj)
-        .subscribe(res => {
+        .subscribe((res:any) => {
           if(res.message){
             alert(res.message);
           }
