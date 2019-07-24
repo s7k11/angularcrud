@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UpdateComponent } from './update/update.component';
 import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { RegisterComponent } from './register/register.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MiddleGetComponent,
     UpdateComponent,
     LoginComponent,
-    DashboardComponent
+    DashboardComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

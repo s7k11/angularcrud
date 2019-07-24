@@ -16,14 +16,9 @@ export class MiddleAddComponent implements OnInit {
   ngOnInit() {
   }
   addData() {
-    if(this.password.length<10){
-      alert('Password Must be atleast 10 Characters long');
-    }
-    else
-    {
+    
       this.us.addData(this.name,this.address,this.city,this.password,this.email);
-      alert('Registeration Complete');
-    }
+      alert('Data added');
     console.log(this.password.length)
     // alert(this.password.lenght);
     // console.log(this.name)

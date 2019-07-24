@@ -80,4 +80,15 @@ export class UsersService {
         .http
         .get(`${this.url}/getbyid/${id}`);
     }
+    
+  register(name,address,city,password,email) {
+    // console.log(password);
+    // let length = password.lenght;
+    // console.log(length);
+      const obj = {name,address,city,password,email};
+      this
+          .http
+          .post(`${this.url}/addRegister`, obj)
+          .subscribe(res => console.log(res));
+  }
 }
